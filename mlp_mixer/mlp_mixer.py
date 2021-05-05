@@ -27,13 +27,14 @@ class PatchEmbeddings(nn.Module):
         return self.proj(x)
 
 
-class Pooling(nn.Module):
+class GlobalAveragePooling(nn.Module):
 
-    def __init__(self):
-        super().__init__()
+    def __init__(self, dim: int = 1):
+        super().__init__(self)
+        self.dim = dim
 
     def forward(self, x: torch.Tensor) -> torch.Tensor:
-        return x.mean(dim=1)
+        return x.mean(dim=self.dim)
 
 
 class Classifier(nn.Module):
@@ -115,7 +116,7 @@ class MLPMixer(nn.Module):
         ]
         self.layers = nn.Sequential(*layers)
         self.norm = nn.LayerNorm(hidden_dim)
-        self.pool = Pooling()
+        self.pool = GlobalAveragePooling(dim=1)
         self.classifier = Classifier(hidden_dim, num_classes)
 
     def forward(self, x: torch.Tensor) -> torch.Tensor:
