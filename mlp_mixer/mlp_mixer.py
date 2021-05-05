@@ -30,7 +30,7 @@ class PatchEmbeddings(nn.Module):
 class GlobalAveragePooling(nn.Module):
 
     def __init__(self, dim: int = 1):
-        super().__init__(self)
+        super().__init__()
         self.dim = dim
 
     def forward(self, x: torch.Tensor) -> torch.Tensor:
