@@ -24,6 +24,28 @@ x = torch.randn(1, 3, 256, 256)
 model(x) # (1, 10)
 ```
 
+# Preconfigured models
+```python
+from mlp_mixer.models import (
+    mlp_mixer_s16,
+    mlp_mixer_s32,
+    mlp_mixer_b16,
+    mlp_mixer_b32,
+    mlp_mixer_l16,
+    mlp_mixer_l32,
+    mlp_mixer_h14
+)
+
+model = mlp_mixer.models.mlp_mixer_s16(
+    num_classes = 10,
+    image_size = 256,
+    channels = 3
+)
+
+x = torch.randn(1, 3, 256, 256)
+model(x) # (1, 10)
+```
+
 # Install
 
 ```bash
