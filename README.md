@@ -36,7 +36,7 @@ from mlp_mixer.models import (
     mlp_mixer_h14
 )
 
-model = mlp_mixer.models.mlp_mixer_s16(
+model = mlp_mixer_s16(
     num_classes = 10,
     image_size = 256,
     channels = 3
