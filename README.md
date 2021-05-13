@@ -24,7 +24,7 @@ x = torch.randn(1, 3, 256, 256)
 model(x) # (1, 10)
 ```
 
-# Preconfigured models
+## Preconfigured models
 ```python
 from mlp_mixer.models import (
     mlp_mixer_s16,
@@ -36,6 +36,7 @@ from mlp_mixer.models import (
     mlp_mixer_h14
 )
 
+# From the paper S16: patch_size=16, num_layers=8, hidden_dim=512, tokens_hidden_dim=256, channels_hidden_dim=2048
 model = mlp_mixer_s16(
     num_classes = 10,
     image_size = 256,
