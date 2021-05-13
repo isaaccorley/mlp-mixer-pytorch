@@ -1,6 +1,0 @@
-model:
-  patch_size: 32
-  num_layers: 8
-  hidden_dim: 512
-  channels_hidden_dim: 2048
-  tokens_hidden_dim: 256

@@ -29,3 +29,9 @@ model(x) # (1, 10)
 ```bash
 pip install -r requirements.txt
 ```
+
+# Tests
+
+```bash
+pytest -ra
+```

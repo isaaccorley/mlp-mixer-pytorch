@@ -94,10 +94,10 @@ class MLPMixer(nn.Module):
     def __init__(
         self,
         num_classes: int,
-        num_layers: int = 8,
         image_size: int = 256,
-        patch_size: int = 32,
         channels: int = 3,
+        patch_size: int = 32,
+        num_layers: int = 8,
         hidden_dim: int = 512,
         tokens_hidden_dim: int = 256,
         channels_hidden_dim: int = 2048
